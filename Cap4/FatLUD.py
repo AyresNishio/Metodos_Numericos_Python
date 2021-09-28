@@ -1,6 +1,6 @@
 import numpy as np
 
-#Fat LDU
+#Fatoração LDU
 def fat_LDU(L,A,b):
     n = L.shape[0]
     D=np.identity(n)
