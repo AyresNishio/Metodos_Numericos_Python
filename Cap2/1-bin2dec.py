@@ -1,8 +1,9 @@
-#Programa do para converter número binário em decimal
+#Programa do para a conversão de número binário em decimal
 
-#Algotirmo Apresentado no livro (página 37)
 
-#Ler Vetor Binario e Armazenar em uma Lista
+#Algotirmo Apresentado no livro (página 37) Ex:5 bits 11011  -> 27
+
+#Lê Vetor Binario e Armazenar em uma Lista
 num_bits = int(input("Digite o número bits do binário: ")) # Digitar o numero de bits
 val_bin=[]                # Numero binário (armazenado em vetor)
 for i in range(num_bits):

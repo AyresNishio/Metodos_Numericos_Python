@@ -1,8 +1,9 @@
 #Programa do para converter número binário fracionário para decimal
 
-#Algotirmo Apresentado no livro ( texto página 46)
+#Algotirmo Apresentado no livro (texto página 42) Ex: 6 bits .101101 -> 0.703125
+#  
 
-#Ler Vetor Binario e Armazenar em uma Lista
+#Lê Vetor Binario e Armazenar em uma Lista
 num_bits = int(input("Digite o número de bits após a vírgula do binário: ")) # Digitar o numero de bits
 val_bin=[] # Numero binário (armazenado em vetor)
 val_dec=0.0

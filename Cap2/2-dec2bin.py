@@ -1,6 +1,6 @@
-#Programa do para converter número decimal em binário
+#Programa do para a Conversão de número decimal em binário
 
-#Algotirmo Apresentado no livro (página 39)
+#Algotirmo Apresentado no livro (página 39) Ex: 187 -> 10111011
 
 #Entrar com Número decimal
 dec_val = int(input("Digite o valor do número decimal: "))

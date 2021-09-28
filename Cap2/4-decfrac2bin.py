@@ -1,8 +1,9 @@
 #Programa do para converter número binário fracionário para decimal
 
-#Algotirmo Apresentado no livro (página 45)
+#Algotirmo Apresentado no livro (página 44): Ex 0.61 7 digitos -> 0.1001110
+
 k=0
-val_dec_frac=float(input("Digite o número fracionário a ser convertido:"))
+val_dec_frac=float(input("Digite o número fracionário a ser convertido [Obs: Utilize (.) para separar parte inteira da decimal]:"))
 r=[val_dec_frac] # Lista para armazenar os valores de r (decimal fracionário) em cada iteração
 k_lim=int(input("Digite o limite de dígitos binários desejados:"))
 b=[]
