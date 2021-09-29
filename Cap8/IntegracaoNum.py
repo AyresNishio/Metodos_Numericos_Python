@@ -1,3 +1,4 @@
+
 import numpy as np
 
 #####Trapézios
@@ -98,15 +99,15 @@ def metodo_38Simpson(a,b,r):
     return I_38SR, erro_38s
 
 def erro_trapezio(h,x,m):
-    erro_t = -m*h**3*M2(x)/12
+    erro_t = abs(-m*h**3*M2(x)/12)
     return erro_t
 
 def erro_13simpson(h,x,m):
-    erro_13s = -h**5*M4(x)/90*(m/2)
+    erro_13s = abs(-h**5*M4(x)/90*(m/2))
     return erro_13s
 
 def erro_38simpson(h,x,m):
-    erro_38s = -3*h**5*M4(x)/80*(m/3)
+    erro_38s = abs(-3*h**5*M4(x)/80*(m/3))
     return erro_38s
 if __name__ == "__main__":
     #exemplo 8.3
@@ -114,7 +115,7 @@ if __name__ == "__main__":
     b=2
     m=4;
     ms=2
-    I_tr , erro_tr    = metodo_trapezio(a,b,m)
+    I_tr , erro_tr   = metodo_trapezio(a,b,m)
     I_13s, erro_13s  = metodo_13Simpson(a,b,ms)
     I_38s, erro_38s  = metodo_38Simpson(a,b,ms)
 
@@ -127,14 +128,17 @@ if __name__ == "__main__":
 # endfunction
 # //=====================================================
 # //definição do intervalo de integração
+
 # a=input('entre com o extremo inferior do intervalo de integração ');
 # b=input('entre com o extremo superior do intervalo de integração ');
 # tol=input('entre com o valor da tolerância (precisão) para integração ');
 # //====================================================
 # //número de pontos para se discretizar a 2a. derivada do integrando
 # // no intervalo de integração [a,b]
-# n_discret=100;
-# d=(b-a)/n_discret;
+
+
+
+
 # x=a;
 # for i=1:n_discret+1
 # [deriv1,deriv2]=numderivative(funcao,x,[],2);
@@ -211,4 +215,4 @@ if __name__ == "__main__":
 # regra_simpson_2(1,%e^2,75,funcao);
 # printf('Valor da Integral pela Regra 3/8 de Simpson = %g', I)
 
-if __name__ == '__main__':
+#if __name__ == '__main__':

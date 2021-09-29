@@ -39,14 +39,33 @@ def elimGauss(A):
             A[j,:] = A[j,:] - m*A[i,:]
  
     return L,A
-   
+
+# Função Principal do programa   
 if __name__ == '__main__':
 
-    A=[[1,2,3], [4,5,6], [7,8,8]]
+    # Exemplo simples 3x3 solução:  x= [-1/3, 2/3, 0]
+    # A=[[1,2,3], [4,5,6], [7,8,8]]
+    # b = [1,2,3]
+
+    # Exemplo do livro 4.1 e 4.2:  x= [-1/3, 2/3, 0]
+    A=[[4, -2, -3, 6], [-6, 7, 6.5, -6], [1, 7.5, 6.25, 5.5], [-12, 22, 15.5, -1]]
+    b = [12, -6.5, 16, 17]
+    
     A=np.array(A)
-    b = [1,2,3]
-    x= [-1/3, 2/3, 0]
+    
+    # Eliminação
     L,A = elimGauss(A)
+    # Solução do Sistema
     L,D,U,x = fat_LDU(L,A,b)
+
+    print('Matriz A:')
     print(A)
+    print('Matriz L:')
+    print(L)
+    print('Matriz D:')
+    print(D)
+    print('Matriz U:')
+    print(U)
+    print('Solução x:')
+    print(x)
     # LDU()

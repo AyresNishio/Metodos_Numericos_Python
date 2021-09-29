@@ -1,6 +1,7 @@
 # Este programa tem como finalidade apreentar o uso da biblioteca sympy para obter derivadas simbólicas  
 
 import sympy as sym
+import numpy as np
 
 
 print('Exemplo base, uma única variável')
@@ -49,3 +50,14 @@ print('df/dx:')
 print(sym.diff(2*(x**3) + 4*(y**2) - 118,x))
 print('df/dy:')
 print(sym.diff(2*(x**3) + 4*(y**2) - 118,y))
+
+print('-----------------------------------') 
+#################Exemplo5.1#############
+print('Exemplo 8.3')
+print('f(x)= e**((-x**2))')
+x = sym.symbols('x')
+print('df2/dx:')
+print(sym.diff(sym.diff(sym.exp((-x**2)),x)))
+print('df2/dx:')
+print(sym.diff(sym.diff(sym.diff(sym.diff(sym.exp((-x**2)),x)))))
+#e**((-x**2))

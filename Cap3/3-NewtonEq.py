@@ -23,7 +23,8 @@ def dfct(x):
 x=[]
 x.append( float(input("Digite o valor inicial do processo iterativo: ")))
 tol = float(input("Digite o valor inicial da tolerância: "))
-precisao = len(str(tol)) +1 # Ajusta as impressões na saida de acordo com o número de casas da tolerância
+# Ajusta as impressões na saida de acordo com o número de casas da tolerância
+precisao = len(str(tol)) +1
 iter_max = int(input("Digite o número maximo de iterações: "))
 iter = 0
 desvio_absoluto = m.inf

@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def vandermonde(x,y):
     num_points = x.shape[0]
@@ -24,64 +25,65 @@ def lagrange(x,y,x_interpol):
             if (j != i):
                 L[i]=L[i]*(x_interpol-x[j])/(x[i]-x[j])
     
-    soma=0
-    for i in range(n):
-        soma=soma+y[i]*L[i]
-    
     #valor interpolado
-    y_interpol=soma 
+    y_interpol=0
+    for i in range(n):
+        y_interpol=y_interpol+y[i]*L[i]
+    
+    
 
     return y_interpol
 
-
-def newton_interpol(x,y,x_interpol):
+def newton_interpol2(x,y,x_interpol):
     #Programa de interpolação pela Forma de Newton
     #construção da tabela de diferenças divididas
     n = x.shape[0]
     Dif_Div =  np.zeros((n,n))
-    #cálculo das diferenças divididas de ordem 1
-    for i in range(n-1):
-        Dif_Div[i,0]=(y[i+1]-y[i])/(x[i+1]-x[i])
-        
-    #cálculo das diferenças divididas de ordem superior
-    for j in range(1,n-1):
-        cont = 0
-        for i in range(1,n-j):
-            Dif_Div[i,j] = (Dif_Div[i,j-1]-Dif_Div[i-1,j-1])/(x[j+i]-x[i-1])
-            cont = cont + 1
-        temp = Dif_Div[:,j].copy()
-        temp = temp[temp != 0]
-        Dif_Div[0:cont,j] = temp 
-        Dif_Div[cont:n,j] = 0 
+    #Cálculo das diferenças divididas de ordem 1
+    for i in range(n):
+        Dif_Div[i,0]=y[i]
 
+    for j in range(1,n):
+        cont = 0
+        for i in range(n-j):
+            Dif_Div[i,j] = (Dif_Div[i+1,j-1]-Dif_Div[i,j-1])/(x[j+i]-x[i])
+            cont = cont + 1
+    print('Tabela de Diferenças divididas do método de Newton')
+    print(Dif_Div)
     #armazenamento das diferenças divididas
     d = np.zeros(n)
     d[0] = y[0]
-    for k in range(1,n):
-        d[k]=Dif_Div[0,k-1]
-    
-    #cálculo do valor de y_interpol no ponto x_interpol
-    delta_x=1
+    for k in range(n):
+        d[k]=Dif_Div[0,k]
+
     y_interpol=d[0]
     for i in range(1,n):
+        #componentes (x-xi)
         compx =1
         for j in range(i):
-            print(f'({x_interpol}-{x[j]})')
             compx = compx*(x_interpol-x[j])
-        #     delta_x=delta_x*(x_interpol-x[i-1])
         y_interpol=y_interpol+d[i]*compx
-    
     return y_interpol
 
 
 if __name__ == '__main__':
+    #Exemplo 6.1, 6.2, 6.3
     x = np.array([1.5, 3.5, 7. ,11.5, 14]) 
     y = np.array([3,6,2.5,9.5,7.4])
     x_interpol = 10
+
+    # Retorna Coeficientes do Polinômio
     coefs_vander = vandermonde(x,y)
+
+    # Retorna o valor y referente ao valor x 
     y_lagrange = lagrange(x,y,x_interpol)
-    y_newton = newton_interpol(x,y,x_interpol) 
-    print(coefs_vander)
+    y_newton = newton_interpol2(x,y,x_interpol) 
+
+    print('Polinômio obtido método de Vandermonde')
+    print(round(coefs_vander[0],6)),
+    for i in range(1,len(coefs_vander)):
+        print(f'{round(coefs_vander[i],6)}x^{i}'),
+    print(f'Valor de f({x_interpol}), obtido pelo método de Lagrange')
     print(y_lagrange)
+    print(f'Valor de f({x_interpol}), obtido pelo método de Newton')
     print(y_newton)
-    print('')
