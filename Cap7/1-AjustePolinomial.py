@@ -44,10 +44,10 @@ if __name__ == '__main__':
     alfa = np.linalg.inv(A)@np.transpose(b)
     
     # POlinônio Interpolante
-    ajuste = np.zeros(n_pontos,dtype=np.float64)
+    y_ajuste = np.zeros(n_pontos,dtype=np.float64)
     for i in range(n_pontos):
         for j in range(n_grau+1):
-            ajuste[i] = ajuste[i] + alfa[j]*x[i]**j
+            y_ajuste[i] = y_ajuste[i] + alfa[j]*x[i]**j
 
     print("Matriz A")        
     print(A) 
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     #Gráfico 
     #Pontos de entrada
     plt.scatter(x, y, marker = 'o',label = 'Pontos da amostra', color = 'red')
-    plt.plot(x, ajuste, label = 'Ajuste')
+    plt.plot(x, y_ajuste, label = 'Ajuste')
 
     
     # Nome dos Eixos
