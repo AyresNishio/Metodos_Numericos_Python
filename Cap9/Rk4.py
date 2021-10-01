@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+def func_analitica(x):
+    dy_dx = 3/5*np.e**(x/3) + 2.4*np.e**(-x/2) 
+    return dy_dx 
+
 def func(x,y):
     dy_dx = (1/2)*np.exp(x/3) - (1/2)*y #Exemplo 9.2
     return dy_dx
@@ -30,7 +34,10 @@ def rk4(y0,x0,h,I):
        xlim =(0,5.5), ylim =(0, 5),
        title ='Método Rk4')
     ax.grid()
-    plt.plot(x, y, marker = '*')
+    ya = func_analitica(np.array(x))
+    plt.plot(x, ya, marker = 'x', label = 'Numérico')
+    plt.plot(x, y , marker = '*', label = 'Analítico')
+    plt.legend()
     plt.show()
     return
 

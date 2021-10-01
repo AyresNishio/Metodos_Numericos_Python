@@ -67,6 +67,7 @@ if __name__ == '__main__':
     # Nome dos Eixos
     plt.xlabel('Eixo - x')
     plt.ylabel('Eixo - y')
+    
     # Título do Gráfico
     plt.title('Ajuste Polinomial Mínimos Quadrados')
     
