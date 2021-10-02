@@ -13,6 +13,8 @@ print("Float 64 bits:\n")
 print(np.finfo(np.float64).eps)
 print('\n')
 
+
+
 #Precisão Máquina Algoritmo
 u = 1.0
 
