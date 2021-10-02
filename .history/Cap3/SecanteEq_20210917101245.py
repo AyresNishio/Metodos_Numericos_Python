@@ -36,7 +36,7 @@ while (desvio_absoluto > tol and iter <=iter_max):
     print("--------------------------------------")
 iter -=1
 if(iter > iter_max):
-    print("limite máximo de iterações alcançado")
+    print("liminte máximo de iterações alcançado")
 else:
     print(f"A solução obtida foi: {round(x[iter],precisao)}")
     print(f"o numero de iterações foi de {iter}")

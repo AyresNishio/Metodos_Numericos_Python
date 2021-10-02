@@ -3,12 +3,12 @@
 import sympy as sym
 
 
-print('Exemplo base, uma única variável')
-print('f(x)= x**5')
-x = sym.symbols('x')
-print('df/dx')
-print(sym.diff(x**5))
-print('-----------------------------------')
+# print('Exemplo base, uma única variável')
+# print('f(x)= x**5')
+# x = sym.symbols('x')
+# print('df/dx')
+# print(sym.diff(x**5))
+# print('-----------------------------------')
 # ###############Var Múltiplas############
 # print('Exemplo para múltiplas variaveis')
 # print('f(x)= x**5 + 2*y**2')
@@ -25,7 +25,7 @@ print('-----------------------------------')
 # print('df/dx')
 # print(sym.diff((x**2+1) * sym.cos(x)))
 # print('-----------------------------------') 
-#################Regra da Cadeia#############
+# #################Regra da Cadeia#############
 # print('Exemplo da Regra da Cadeia')
 # print('f(x)= (x**2-3*x +5)**3')
 # x = sym.symbols('x')

@@ -1,5 +1,6 @@
 import numpy as np
 
+
 #Metodo de Gauss-Jacobi e Gauss Seidel
 
 #Exemplo 4.5 e 4.6 com erros no livro

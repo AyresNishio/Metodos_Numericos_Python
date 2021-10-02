@@ -66,7 +66,7 @@ def newton_interpol(x,y,x_interpol):
     for i in range(1,n):
         compx =1
         for j in range(i):
-            # print(f'({x_interpol}-{x[j]})')
+            print(f'({x_interpol}-{x[j]})')
             compx = compx*(x_interpol-x[j])
         #     delta_x=delta_x*(x_interpol-x[i-1])
         y_interpol=y_interpol+d[i]*compx

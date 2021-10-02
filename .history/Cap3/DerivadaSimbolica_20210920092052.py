@@ -25,7 +25,7 @@ print('-----------------------------------')
 # print('df/dx')
 # print(sym.diff((x**2+1) * sym.cos(x)))
 # print('-----------------------------------') 
-#################Regra da Cadeia#############
+# #################Regra da Cadeia#############
 # print('Exemplo da Regra da Cadeia')
 # print('f(x)= (x**2-3*x +5)**3')
 # x = sym.symbols('x')

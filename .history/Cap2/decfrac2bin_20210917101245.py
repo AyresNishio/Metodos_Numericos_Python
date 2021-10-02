@@ -1,6 +1,6 @@
 #Programa do para converter número binário fracionário para decimal
 
-#Algoritmo Apresentado no livro (página 45)
+#Algotirmo Apresentado no livro (página 45)
 k=0
 val_dec_frac=float(input("Digite o número fracionário a ser convertido:"))
 r=[val_dec_frac] # Lista para armazenar os valores de r (decimal fracionário) em cada iteração
