@@ -15,4 +15,11 @@ print(np.finfo(np.float128).eps)
 
 
 #Precisão Máquina Algoritmo
- 
+u = 1.0
+
+while 1.0 + u != 1.0:
+    u = 0.5*u #potências de 2 (2^-n) -> rápido decaimento
+
+u = 2*u
+print("Zero da Máquina(Algoritmo):\n")
+print(u)
