@@ -1,10 +1,12 @@
-#Programa do Método de Newton (Secantes)
+#Programa do Método da Secante
 
-#Algotirmo Apresentado no livro (página 92)
+#Algotirmo Apresentado no livro (página 78)
+#Exemplo 3.6:
+# Valor inicial do processo iterativo: 1
+# Valor inicial do processo iterativo: 0.8
+# Valor inicial da tolerância: 0.0000005 
+# Número maximo de iterações: 20 
 
-#Programa do Método de Newton
-
-#Algotirmo Apresentado no livro (página 92)
 
 import math as m
 

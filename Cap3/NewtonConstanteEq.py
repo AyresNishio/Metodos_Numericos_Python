@@ -1,6 +1,11 @@
 #Programa do Método de Newton Constante
 
 #Algotirmo Apresentado no livro (texto página 78)
+#Exemplo 3.6:
+# Valor inicial do processo iterativo: 1
+# Valor inicial da tolerância: 0.0000005 
+# Número maximo de iterações: 20 
+# Obs: Uma iteração a mais que a do livro 
 
 import math as m
 

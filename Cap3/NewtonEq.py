@@ -1,6 +1,10 @@
 #Programa do Método de Newton
 
-#Algotirmo Apresentado no livro (página 92)
+#Algotirmo Apresentado no livro (página 73)
+#Exemplo 3.3:
+# Valor inicial do processo iterativo: 1
+# Valor inicial da tolerância: 0.0000005 
+# Número maximo de iterações: 20 
 
 import math as m
 
@@ -19,7 +23,8 @@ def dfct(x):
 x=[]
 x.append( float(input("Digite o valor inicial do processo iterativo: ")))
 tol = float(input("Digite o valor inicial da tolerância: "))
-precisao = len(str(tol)) +1 # Ajusta as impressões na saida de acordo com o número de casas da tolerância
+# Ajusta as impressões na saida de acordo com o número de casas da tolerância
+precisao = len(str(tol)) +1
 iter_max = int(input("Digite o número maximo de iterações: "))
 iter = 0
 desvio_absoluto = m.inf

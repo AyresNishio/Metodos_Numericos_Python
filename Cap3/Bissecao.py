@@ -1,12 +1,19 @@
 #Programa do Método da Bisseção
 
 #Algotirmo Apresentado no livro (página 66)
+# Ex 3.1 
+# Ponto de origem: 0
+# Valor do intervalo: 0.2
+# Número máximo de iterações: 10
+# Resposta [0.8, 1.0]
+#ERRATA: Livro invertido esquerda e direita
 
-import math as m
-# Define Função
+# Biblioteca do python com funções matemáticas
+import numpy as np 
+
 # Define Função
 def fct(x):
-    y =  m.cos(x) - 3 + m.exp(x)
+    y =  np.cos(x) - 3 + np.exp(x)
     return y
 
 a = int(input("Digite o Ponto de origem: "))
@@ -20,11 +27,12 @@ while(fct(a)*fct(b)>0 and iter<max_iter):
     a=b
     b=a+delta
     iter += 1
+
 if(fct(a)*fct(b)>0):
     print('Máximo de iterações atingido')
-    a=-m.inf
-    b=m.inf
+    a=-np.inf
+    b=np.inf
 
-#ERRATA Livro invertido esquerda e direita
+
 print(f'Valor a direita de {a}')
 print(f'Valor a esquerda de {b}')
