@@ -12,10 +12,8 @@ if __name__ == '__main__':
 
     #Número Total de Pontos da Amostra
     n_pontos=x.shape[0];
-
     # Grau do polinômio a ser ajustado aos dados
     n_grau= 2;
-    
     # Soma dos valores de x e de suas potências
     x_soma=np.zeros(2*n_grau, dtype = np.float64)
     for i in range(2*n_grau):

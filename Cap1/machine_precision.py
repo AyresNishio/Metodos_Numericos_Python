@@ -22,3 +22,4 @@ while 1.0 + u != 1.0:
 u = 2*u
 print("Zero da Máquina(Algoritmo):\n")
 print(u)
+print("finish")
