@@ -14,12 +14,14 @@ import numpy as np
 # Define Função
 def fct(x):
     #y =  np.cos(x) - 3 + np.exp(x)
-    y = x/2 - np.tan(x)
+    #y = x/2 - np.tan(x)
+    y =np.exp(x) -4*x**2
+
     return y
 
 
-a = 4.2
-delta = 0.01
+a = 0.0
+delta =0.1
 b = delta + a
 max_iter = 20
 # a = np.float32(input("Digite o Ponto de origem: "))

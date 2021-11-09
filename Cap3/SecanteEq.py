@@ -8,12 +8,13 @@
 # Número maximo de iterações: 20 
 
 
-import math as m
+import numpy as m
 
 
 # Define Função
 def fct(x):
-    y =  m.cos(x) - 3 + m.exp(x)
+    #y =  m.cos(x) - 3 + m.exp(x)
+    y = 1/x - x**2*m.exp(-x)
     return y
 
 
