@@ -13,20 +13,29 @@ import numpy as np
 
 # Define Função
 def fct(x):
-    y =  np.cos(x) - 3 + np.exp(x)
+    #y =  np.cos(x) - 3 + np.exp(x)
+    y = x/2 - np.tan(x)
     return y
 
-a = int(input("Digite o Ponto de origem: "))
-delta = float(input("Digite o valor do intervalo: "))
+
+a = 4.2
+delta = 0.01
 b = delta + a
-max_iter = int(input("Digite o número máximo de iterações: "))
+max_iter = 20
+# a = np.float32(input("Digite o Ponto de origem: "))
+# delta = np.float32(input("Digite o valor do intervalo: "))
+# b = delta + a
+# max_iter = int(input("Digite o número máximo de iterações: "))
 
 iter = 0
 
-while(fct(a)*fct(b)>0 and iter<max_iter):
+while(fct(a)*fct(b)>=0 and iter<max_iter):
     a=b
     b=a+delta
     iter += 1
+    print(f'Iteração: {iter}')
+    print(f' f({a}) = {fct(a)}')
+    print(f' f({b}) = {fct(b)}')
 
 if(fct(a)*fct(b)>0):
     print('Máximo de iterações atingido')

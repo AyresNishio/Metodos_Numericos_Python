@@ -19,8 +19,7 @@ while ((r[k] != 0) and (k<k_lim)):
     
 #Passo a Passo
 for i in range(k_lim):
-    print("k=",i+1,"| rk=",round(r[i],2),"| 2rk=",round(2*r[i],2),"| bk=",b[i])
-    print("-------------------------------------------------")
+    print(f"r{i+1}={round(r[i],2)}; 2*r{i+1}={round(2*r[i],2)} b{i+1}=",b[i])
 
 print('Número Fracionário Decimal Convertido :')
 print(str(b))

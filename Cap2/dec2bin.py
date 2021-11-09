@@ -6,10 +6,15 @@
 dec_val = int(input("Digite o valor do número decimal: "))
 # Inicializar Lista Binaria
 bin_val = []
+resto_ant = 0
+it = 0
 while dec_val != 0:
     
     #Descobre os algarismos do resultado binário
     resto = dec_val % 2
+    print(f'b{it} = ({dec_val+resto_ant}-{resto_ant})/2 = {resto}')
+    resto_ant = resto
+    it+=1
     if resto == 0:
         bin_val.append(0)
     else:

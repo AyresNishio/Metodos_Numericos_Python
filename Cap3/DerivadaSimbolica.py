@@ -61,3 +61,4 @@ print(sym.diff(sym.diff(sym.exp((-x**2)),x)))
 print('df2/dx:')
 print(sym.diff(sym.diff(sym.diff(sym.diff(sym.exp((-x**2)),x)))))
 #e**((-x**2))
+

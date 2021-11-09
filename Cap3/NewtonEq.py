@@ -6,17 +6,19 @@
 # Valor inicial da tolerância: 0.0000005 
 # Número maximo de iterações: 20 
 
-import math as m
+import numpy as np
 
 
 # Define Função
 def fct(x):
-    y =  m.cos(x) - 3 + m.exp(x)
+    #y =  m.cos(x) - 3 + m.exp(x)
+    y =  x/2 - np.tan(x)
     return y
 
 # Define Derivada da Função
 def dfct(x):
-    dy= -m.sin(x) + m.exp(x)
+    #dy= -m.sin(x) + m.exp(x)
+    dy =  -1/2 - 1/(np.cos(x)*np.cos(x))
     return dy
 
 
@@ -26,8 +28,13 @@ tol = float(input("Digite o valor inicial da tolerância: "))
 # Ajusta as impressões na saida de acordo com o número de casas da tolerância
 precisao = len(str(tol)) +1
 iter_max = int(input("Digite o número maximo de iterações: "))
+
+print(f'|df(x)/dx| = {abs(dfct(x[0]))}')
+if(abs(dfct(x))<=1): print('Convergência Garantida')
+else: print('Convergencia NÃO Garantida')
+
 iter = 0
-desvio_absoluto = m.inf
+desvio_absoluto = np.inf
 while (desvio_absoluto > tol and iter <=iter_max):
     print(f"Iteração {iter+1}") 
     delta = fct(x[iter])/dfct(x[iter])
