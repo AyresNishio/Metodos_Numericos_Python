@@ -13,14 +13,16 @@ import numpy as np
 def fct(x):
     #y =  m.cos(x) - 3 + m.exp(x)
     #y =  x/2 - np.tan(x)
-    y = 2*x**3 +np.log(x) -5
+    #y = 2*x**3 +np.log(x) -5
+    y = x**3 -5*np.sin(x)
     return y
 
 # Define Derivada da Função
 def dfct(x):
     #dy= -m.sin(x) + m.exp(x)
     #dy =  -1/2 - 1/(np.cos(x)*np.cos(x))
-    dy = 6*x**2 + 1/x
+    #dy = 6*x**2 + 1/x
+    dy = 3*x**2 - 5*np.cos(x)
     return dy
 
 

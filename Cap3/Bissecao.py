@@ -15,13 +15,14 @@ import numpy as np
 def fct(x):
     #y =  np.cos(x) - 3 + np.exp(x)
     #y = x/2 - np.tan(x)
-    y =np.exp(x) -4*x**2
-
+    #y =np.exp(x) -4*x**2
+    #y = x + np.log(x)
+    y  =  1030*np.pi*(x**2)*((.45*3)-x)/3 -70*(0.9-x)/0.9
     return y
 
 
-a = 0.0
-delta =0.1
+a = 0.55
+delta =0.05
 b = delta + a
 max_iter = 20
 # a = np.float32(input("Digite o Ponto de origem: "))
@@ -30,6 +31,9 @@ max_iter = 20
 # max_iter = int(input("Digite o número máximo de iterações: "))
 
 iter = 0
+print(f'Iteração: {iter}')
+print(f' f({a}) = {fct(a)}')
+print(f' f({b}) = {fct(b)}')
 
 while(fct(a)*fct(b)>=0 and iter<max_iter):
     a=b

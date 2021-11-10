@@ -14,4 +14,14 @@ def dg3(x):
 
     return y
 
+def L(x):
+    l = 1*x*np.sinh(200/x)
+    return l
+
+def q9(x):
+    y = 3*x**2 - 5*np.cos(x)
+    return y
+
+    
+
 print('n')

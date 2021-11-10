@@ -14,7 +14,10 @@ import numpy as m
 # Define Função
 def fct(x):
     #y =  m.cos(x) - 3 + m.exp(x)
-    y = 1/x - x**2*m.exp(-x)
+    #y = 1/x - x**2*m.exp(-x)
+    #y=x*(m.cosh(200/x)-1)-100
+    #y = (1+x)**(-12) +8.5*x-1
+    y = (m.sin(x)**3)/(x-m.sin(x)*m.cos(x))-1
     return y
 
 
