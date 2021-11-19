@@ -3,7 +3,8 @@
 #Algotirmo Apresentado no livro (página 39) Ex: 187 -> 10111011
 
 #Entrar com Número decimal
-dec_val = int(input("Digite o valor do número decimal: "))
+#dec_val = int(input("Digite o valor do número decimal: "))
+dec_val = 2021
 # Inicializar Lista Binaria
 bin_val = []
 resto_ant = 0
