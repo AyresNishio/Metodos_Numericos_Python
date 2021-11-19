@@ -4,18 +4,19 @@ def f(x):
     # f = x**6 - x -1
     # f = x**3 - 9*x + 3 
     #h = np.cos(x) - 3 + np.exp(x) 
-    h=np.exp(x) -4*x**2
-    return h
+    y=x**3 - 2*x -5
+    #y = (1/x)*np.exp(1) - (x**2)*np.exp(-x)  -
+    return y
 
 
 #Método da Bisseção
+#q5
+# a=0.0
+# b=5
+# tol = 0.0005
+#q2
 
-a=0.0
-b=1
-tol = 0.001
-# a=1
-# b=3
-# tol = 0.001
+
 
 
 x = (a+b)/2
