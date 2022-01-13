@@ -7,8 +7,9 @@ import numpy as m
 
 # Define Função
 def fct(x):
-    #y =  m.cos(x) - 3 + m.exp(x)
+    #a)
     #y =  (x**2)*m.exp(-x)  -(1/x)
+    #b) dy/dx
     y = x**2*m.exp(-x) - 2*x*m.exp(-x) - 1/x**2
     return y
 
