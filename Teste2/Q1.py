@@ -8,13 +8,13 @@ def vandermonde(x,y):
     for i in range(num_points):
         for j in range(num_points):
             A[i,j] = x[i]**j
-
+    print(A)
+    print(y)
     coef = np.linalg.inv(A)@np.transpose(y)
     
     return coef
 
 if __name__ == '__main__':
-    #Exemplo 6.1, 6.2, 6.3
     x = np.array([0, 88,  100]) 
     y = np.array([0,  4, 2.44])
 
