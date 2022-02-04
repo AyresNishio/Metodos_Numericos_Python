@@ -2,7 +2,7 @@ import numpy as np
 
 
 def func(x):
-    y=x**2*np.log(x)
+    y=1/(x+4)
     return y
 
 def d2func(x):
@@ -55,7 +55,10 @@ if __name__ == '__main__':
     intervalo = np.linspace(a,b,num = n_discret)
     d_intervalo = d2func(intervalo)
     m2=max(d_intervalo)
+
     # //Número de subintervalos para que se atinja a tolerância especificada
     m=int(np.ceil(np.sqrt(((b-a)**3*m2)/(12*tol))))
 
-    print(m)
+    I_tr = metodo_trapezio(a,b,m)
+
+    print(m, I_tr)
