@@ -78,7 +78,6 @@ if __name__ == '__main__':
     x= np.array([0,0,0,0])
     tol = 1e-3
 
-    #Precisão das Impressões
     precisao = len(str(tol))
     
     #Gauss Jacobi
