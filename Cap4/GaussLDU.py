@@ -1,33 +1,36 @@
 import numpy as np
 
 #Fatoração LDU
-def fat_LDU(L,A,b):
-    n = L.shape[0]
-    D=np.identity(n)
-    U=A
-    for i in  range(n):
-        D[i,i]=U[i,i]
-        U[i,:]=U[i,:]/U[i,i] 
-    
-    
+def LDU(A,b):
+    n = len(A)
+
+    L,A = elimGauss(A)
     # Fatora b
+    y=b
     for j in range(n-1):
         for i in range(j+1,n):
-            b[i] = b[i] - L[i,j]*b[j]
-     
-    y=b
-    for i in range(n):
-        y[i]=y[i]/D[i,i]
-        
-    z=y
+            y[i] = y[i] - L[i,j]*y[j]
 
-    #x=U\z ou x = U^-1 x z
+    D=np.identity(n)
+    for i in  range(n):
+        D[i,i]=A[i,i]
+
+    z=np.zeros(n)
+    for i in range(n):
+        z[i]=y[i]/D[i,i]
+
+    for i in  range(n):
+        A[i,:]=A[i,:]/A[i,i]    
+
+    U=A
+    #x=U\z ou x = (U^-1)*z
     x = np.linalg.inv(U)@z
+
     return L,D,U,x      
     
 # Eliminação de Gauss
 def elimGauss(A):
-    n=A.shape[0]
+    n=len(A)
     L=np.identity(n)
     for i in range(n-1):
         #Elemento pivô
@@ -44,11 +47,14 @@ def elimGauss(A):
 if __name__ == '__main__':
 
     # Exemplo simples 3x3 solução:  x= [-1/3, 2/3, 0]
-    # A=[[1,2,3], [4,5,6], [7,8,8]]
-    # b = [1,2,3]
+    A=[[1,2,3], [4,5,6], [7,8,8]]
+    b = [1,2,3]
 
     # Exemplo do livro 4.1 e 4.2:  
-    # A=[[4, -2, -3, 6], [-6, 7, 6.5, -6], [1, 7.5, 6.25, 5.5], [-12, 22, 15.5, -1]]
+    # A=[[4, -2, -3, 6],
+    #    [-6, 7, 6.5, -6],
+    #    [1, 7.5, 6.25, 5.5],
+    #    [-12, 22, 15.5, -1]]
     # b = [12, -6.5, 16, 17]
 
     # # Exemplo da lista 1  
@@ -63,23 +69,27 @@ if __name__ == '__main__':
     # b = [0, 0, 0, 0, 0, 1]
 
     # # Exemplo da lista 1  
-    A=[ [2, 0, 0, 8, 0], 
-        [0, 2, 0, 0, 0], 
-        [0, 0, 4, 0, 0], 
-        [4, 0, 0, 16, 0], 
-        [1,  1, -1, 2, -1]]
+    # A=[ [2, 0, 0, 8, 0], 
+    #     [0, 2, 0, 0, 0], 
+    #     [0, 0, 4, 0, 0], 
+    #     [4, 0, 0, 16, 0], 
+    #     [1,  1, -1, 2, -1]]
 
     # #b = [2, -1, 7, 5, 4, 3]
-    b = [0, 0, 0, 0, 0, 1]
+    # b = [0, 0, 0, 0, 0, 1]
 
+    #Exemplo Slide
+    # A=[ [ 6, 1,  -2,  0],
+    #     [ 0, 9,   0,  4],
+    #     [ 2,-1,  10, -1],
+    #     [ 0, 0,  -1,  8]]
+    # b = [12, -6.5, 16, 17]
     
     A=np.array(A,dtype=np.float64)
     print(f'Determinante de A: {np.linalg.det(A)}')
     
-    # Eliminação
-    L,A = elimGauss(A)
     # Solução do Sistema
-    L,D,U,x = fat_LDU(L,A,b)
+    L,D,U,x = LDU(A,b)
 
     print('Matriz A:')
     print(A)
@@ -91,4 +101,3 @@ if __name__ == '__main__':
     print(U)
     print('Solução x:')
     print(x)
-    # LDU()
